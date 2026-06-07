@@ -326,6 +326,7 @@ console.log(message);
 console.log(betterMessage);
 
 // null and undefined
+// Example 1: User Login State
 let loggedInUser = null; // No one logged in initially
 function login(username) {
 loggedInUser = username;
@@ -337,3 +338,17 @@ login("Alice");
 console.log(loggedInUser); // "Alice"
 logout();
 console.log(loggedInUser); // null
+
+//example 2 
+console.log(typeof undefined); // "undefined" ✓ Makes sense
+console.log(typeof null); // "object" , Historical bug!
+// To properly check for null, use strict equality:
+let value = null;
+if (value === null) {
+console.log("It's null");
+}
+// Don't rely on typeof for null
+if (typeof value === "object") {
+// This could be null OR an actual object!
+console.log("Could be null or an object");
+}
