@@ -181,10 +181,159 @@
 
 // String Indexing
 
-let city = "London";
-console.log(city[0]); // "L" - first character
-console.log(city[1]); // "o" - second character
-console.log(city[2]); // "n" - third character
-console.log(city[3]); // "d" - fourth character
-console.log(city[4]); // "o" - fifth character
-console.log(city[5]); // "n" - sixth (last) character
+// let city = "London";
+// console.log(city[0]); // "L" - first character
+// console.log(city[1]); // "o" - second character
+// console.log(city[2]); // "n" - third character
+// console.log(city[3]); // "d" - fourth character
+// console.log(city[4]); // "o" - fifth character
+// console.log(city[5]); // "n" - sixth (last) character
+
+
+// // First and Last Characters of string
+
+// let word = `JavaScript`;
+// // First character
+// console.log(word[0]); // "J"
+// // Last character
+// console.log(word[word.length - 1]); // "t"
+
+
+// // Out of Bounds Access
+
+// let name = "Alice";
+
+// console.log(name[0]); // "A" - valid
+// console.log(name[4]); // "e" - valid
+// console.log(name[5]); // undefined - out of bounds
+// console.log(name[-1]); // undefined - negative index not supported  
+
+
+// // Checking First Character
+
+// let email = "alice@example.com";
+// if (email[0] === '@') {
+// console.log("Email cannot start with @");
+// } else {
+// console.log("Email format might be valid");
+// }
+
+// // Getting Initials 
+//  let firstName = `Alice`;
+//  let lastName = `Smith`;
+//  let initials = firstName[0] + lastName[0];
+//  console.log(initials); // "AS"
+
+// //  with dots
+// let formalInitials = firstName[0] + "." + lastName[0] + ".";
+// console.log(formalInitials); // "A.S."
+
+// // Pasword Validation
+
+// let password = `Pass123`;
+// let firstChar = password[0];
+// let lastChar = password[password.length -1];
+
+// console.log("First character: " + firstChar); // "P"
+// console.log("Last character: " + lastChar); // "3"
+
+// if(lastChar >= 0 && lastChar <= 9){
+//     console.log("Password is valid");
+// }
+
+// // Strings are Immutable
+// let word = "Hello";
+// word[0] = "J"; // This does NOT work!
+// console.log(word); // Still "Hello"
+// // To "change" a string, create a new one
+// let newWord = "J" + word.slice(1);
+// console.log(newWord); // "Jello"
+
+// // String Concatenation
+// let firstName = "Alice";
+// let lastName = "Smith";
+// let fullName = firstName + " " + lastName;
+// console.log(fullName); // "Alice Smith"
+
+// // Adding space
+// let fullNameWithSpace = firstName + " " + lastName;
+// console.log(fullNameWithSpace); // "Alice Smith"
+
+// // Multipple Concatination
+// let greeting = "Hello, " + firstName + " " + lastName + "!";
+// console.log(greeting); // "Hello, Alice Smith!"
+
+// // Concatenating Numbers and Strings
+// // Number + String = String
+// let score = 100;
+// let message1 = "Your score is: " + score;
+// console.log(message1); // "Your score is: 100"
+// console.log(typeof message1); // "string"
+// // String + Number = String
+// let message2 = "Player " + 1;
+// console.log(message2); // "Player 1"
+// // Multiple numbers and strings
+// let age = 25;
+// let message3 = "I am " + age + " years old";
+// console.log(message3); // "I am 25 years old"
+
+
+// // Example Creating URLs
+
+// let domain = `example.com`;
+// let protocol = `https://`;
+// let page = `/about`;
+// let fullUrl = domain + protocol +page;
+// console.log(fullUrl); // "https://example.com/about"
+
+// // += Operator for Concatination
+
+// // Example 1
+// let message = `Hello`;
+// message += ` `;
+// message +=`World`;
+// message += `!`;
+// console.log(message); // "Hello World!"
+
+// // Example 2
+// let htmlContent = `<div>`;
+// htmlContent += `<h1>tittle<h1>`;
+// htmlContent += `<p>lorem*5<p>`;
+// htmlContent += `</div>`;
+// console.log(htmlContent); // "<div><h1>tittle<h1><p>lorem*5<p></div>"
+
+// // Number Addition Vs String Concatenation
+// // All numbers - addition
+// console.log(10 + 20); // 30 (number addition)
+// // String first - concatenation
+// console.log("10" + 20); // "1020" (string concatenation)
+// // Number first, then string - concatenation
+// console.log(10 + "20"); // "1020" (string concatenation)
+// // Mixed operations
+// console.log(10 + 20 + "30"); // "3030" (10+20=30, then "30"+"30")
+// console.log("10" + 20 + 30); // "102030" (all concatenation)
+// // Ussing Paranthesis
+// console.log(`result:` + (10+20)); // "result:30" (10+20=30, then concatenation)
+// console.log(`result:` + 10 + 20); // "result:1020" (all concatenation)
+
+// Concatiation Vs Template Literals
+let name = `alice`;
+let age = 25;
+let city = `New York`;
+let message = "my name is " + name + "," +"i am "+ age +"years old," +"ilive in "+ city ;
+let betterMessage = `my name is ${name}, i am ${age} years old, i live in ${city} city.`;
+console.log(message);
+console.log(betterMessage);
+
+// null and undefined
+let loggedInUser = null; // No one logged in initially
+function login(username) {
+loggedInUser = username;
+}
+function logout() {
+loggedInUser = null; // Explicitly clear the user
+}
+login("Alice");
+console.log(loggedInUser); // "Alice"
+logout();
+console.log(loggedInUser); // null
