@@ -113,13 +113,39 @@
 
 
 
-// Number Strings
+// // Number Strings
 
-// String comparison (character by character)
-console.log("10" < "2"); // true 
-// Why? Compare first character: "1" < "2" (49 < 50)
-console.log("100" < "20"); // true 
-// Why? Compare first character: "1" < "2"
-// Actual number comparison
-console.log(10 < 2); // false 
-console.log(100 < 20); // false 
+// // String comparison (character by character)
+// console.log("10" < "2"); // true 
+// // Why? Compare first character: "1" < "2" (49 < 50)
+// console.log("100" < "20"); // true 
+// // Why? Compare first character: "1" < "2"
+// // Actual number comparison
+// console.log(10 < 2); // false 
+// console.log(100 < 20); // false 
+
+// // To compare number strings as numbers:
+// let str1 = "10";
+// let str2 = "2";
+// // Convert to numbers first
+// console.log(Number(str1) < Number(str2)); // false 
+// // Or use parseInt/parseFloat
+// console.log(parseInt(str1) < parseInt(str2)); // false 
+
+// Alphabetical Sorting
+// example 1
+
+let names = ["Charlie", "Alice", "Bob"];
+// This won't work as expected with uppercase/lowercase mix
+let name1 = "alice";
+let name2 = "Bob";
+console.log(name1 < name2); // false (a > B in ASCII)
+// Solution: Convert to same case before comparing
+console.log(name1.toLowerCase() < name2.toLowerCase()); // true 
+console.log(name1.toUpperCase() < name2.toUpperCase());//true
+
+// example 2(Lexicographical (Dictionary) Order)
+// Incorrect: Direct comparison
+let words = ["apple", "Apple", "banana", "Banana"];
+words.sort();
+console.log(words); // ["Apple", "Banana", "apple", "banana"]
