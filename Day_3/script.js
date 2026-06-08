@@ -263,3 +263,9 @@ if(studentAge< 18){
 // }else{
 //   console.log(`NOT PEERFECT RAINING!`);
 // }//Perfectd temperature i.e 25 degrees with Raining Sataus true.
+
+
+// IMPORTANT NOTE
+// 1. ! (NOT) - highest precedence
+// 2. && (AND)
+// 3. || (OR) - lowest precedence
