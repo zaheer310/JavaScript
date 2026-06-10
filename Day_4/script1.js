@@ -221,21 +221,21 @@ console.log(vegetables); //Output : (3) ['Brinjal', 'Potato', 'Carrot']
 // 4  .reverse() Reverses the array in place
 
 // Example : .indexOf(item)
-let fruits = ["apple", "banana", "mango"];
-console.log(fruits.indexOf("banana")); // 1
-console.log(fruits.indexOf("grape")); // -1
+let inputFruits = ["apple", "banana", "mango"];
+console.log(inputFruits.indexOf("banana")); // 1
+console.log(inputFruits.indexOf("grape")); // -1
 
 // Example 2: Using includes()
-let colors = ["red", "green", "blue"];
-console.log(colors.includes("green")); // true
-console.log(colors.includes("yellow")); // false
+let inputColors = ["red", "green", "blue"];
+console.log(inputColors.includes("green")); // true
+console.log(inputColors.includes("yellow")); // false
 
 // Example
 let cars = [`Ferrari`, `Bugati`, `Mechlaren`, `BMW`, `Mercedes`];
 if (cars.includes(`Bugati`)) {
   cars.shift();
 }
-console.log(cars);
+console.log(cars);//(4) ['Bugati', 'Mechlaren', 'BMW', 'Mercedes']
 
 // Example for Concat()
 let arr1 = [1, 2, 3];
@@ -249,5 +249,39 @@ let digits = [1, 2, 3, 45];
 digits.reverse();
 console.log(digits); // [5, 4, 3, 2, 1]
 
-// Example to concat the arrays
-let items = [];
+// Example to combine the arrays
+let items = [`a` , `b` , `c`];
+let moreItems = [`d` , `e`];
+let all = items.concat(moreItems);
+console.log(all.includes(`c`));//true
+console.log(all.indexOf(`d`));//3
+
+
+// The  .splice() METHOD
+// The .splice() method is a powerful tool that can remove, replace, or add elements at any position in an array. It modifies the original array.
+// Syntax : arrayName.splice(startIndex ,deleteCount, item1 ,item2,....);
+// startIndex : Where to start the operation
+// deleteCount : How many elements to remove
+// item1, item2... : Elements to add (optional)
+
+// Example 1:
+let months = [`Jan` , `Feb` , `Mar` , `Jun`];
+months.splice(1,2, `july` , `april` , `May`);
+console.log(months);//(5) ['Jan', 'july', 'april', 'May', 'Jun']
+
+// Example 2: Removing elements
+let inputColors1 = [`Red` , `Blue` , `Green` , `Orange`];
+inputColors1.splice(0,3);
+console.log(inputColors1);// Output: ['Orange']
+
+// Example 3: Replacing Elemnts
+let InputFruits = [`Apple` , `Banana` ,`Mango` , `Orange`];
+InputFruits.splice(0, 2, `Cherry` , `Strawberry`);
+console.log(InputFruits);// Output: (4) ['Cherry', 'Strawberry', 'Mango', 'Orange']
+
+// Example : Removing Multiple Elements
+let words = [`a` ,`b` , `c` , `d` , `e`];
+words.splice(0,4);
+console.log(words);// Output : ['e']
+
+// pending topics are 14 & 15
