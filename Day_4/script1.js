@@ -235,7 +235,7 @@ let cars = [`Ferrari`, `Bugati`, `Mechlaren`, `BMW`, `Mercedes`];
 if (cars.includes(`Bugati`)) {
   cars.shift();
 }
-console.log(cars);//(4) ['Bugati', 'Mechlaren', 'BMW', 'Mercedes']
+console.log(cars); //(4) ['Bugati', 'Mechlaren', 'BMW', 'Mercedes']
 
 // Example for Concat()
 let arr1 = [1, 2, 3];
@@ -250,12 +250,11 @@ digits.reverse();
 console.log(digits); // [5, 4, 3, 2, 1]
 
 // Example to combine the arrays
-let items = [`a` , `b` , `c`];
-let moreItems = [`d` , `e`];
+let items = [`a`, `b`, `c`];
+let moreItems = [`d`, `e`];
 let all = items.concat(moreItems);
-console.log(all.includes(`c`));//true
-console.log(all.indexOf(`d`));//3
-
+console.log(all.includes(`c`)); //true
+console.log(all.indexOf(`d`)); //3
 
 // The  .splice() METHOD
 // The .splice() method is a powerful tool that can remove, replace, or add elements at any position in an array. It modifies the original array.
@@ -265,23 +264,69 @@ console.log(all.indexOf(`d`));//3
 // item1, item2... : Elements to add (optional)
 
 // Example 1:
-let months = [`Jan` , `Feb` , `Mar` , `Jun`];
-months.splice(1,2, `july` , `april` , `May`);
-console.log(months);//(5) ['Jan', 'july', 'april', 'May', 'Jun']
+let months = [`Jan`, `Feb`, `Mar`, `Jun`];
+months.splice(1, 2, `july`, `april`, `May`);
+console.log(months); //(5) ['Jan', 'july', 'april', 'May', 'Jun']
 
 // Example 2: Removing elements
-let inputColors1 = [`Red` , `Blue` , `Green` , `Orange`];
-inputColors1.splice(0,3);
-console.log(inputColors1);// Output: ['Orange']
+let inputColors1 = [`Red`, `Blue`, `Green`, `Orange`];
+inputColors1.splice(0, 3);
+console.log(inputColors1); // Output: ['Orange']
 
 // Example 3: Replacing Elemnts
-let InputFruits = [`Apple` , `Banana` ,`Mango` , `Orange`];
-InputFruits.splice(0, 2, `Cherry` , `Strawberry`);
-console.log(InputFruits);// Output: (4) ['Cherry', 'Strawberry', 'Mango', 'Orange']
+let InputFruits = [`Apple`, `Banana`, `Mango`, `Orange`];
+InputFruits.splice(0, 2, `Cherry`, `Strawberry`);
+console.log(InputFruits); // Output: (4) ['Cherry', 'Strawberry', 'Mango', 'Orange']
 
 // Example : Removing Multiple Elements
-let words = [`a` ,`b` , `c` , `d` , `e`];
-words.splice(0,4);
-console.log(words);// Output : ['e']
+let words = [`a`, `b`, `c`, `d`, `e`];
+words.splice(0, 4);
+console.log(words); // Output : ['e']
 
-// pending topics are 14 & 15
+// Nested Arrays
+// Example 1:
+let grid = [
+  [1, 2],
+  [3, 4],
+];
+console.log(grid[0][1]); // Output: 2
+console.log(grid[1][0]); // Output : 3
+console.log(grid[1][1]); // Outpit: 4
+
+// Example 2:
+let board = [
+  [`X`, `O`, `X`],
+  [`O`, `X`, `O`],
+  [`O`, `X`, `X`],
+];
+console.log(board[0][0]); // top-left X
+console.log(board[0][1]); // top-Middle O
+console.log(board[2][0]); //bottom-left X
+
+// Example 3:
+let grades = [
+  [`Alice`, 45, 67, 78],
+  [`Bob`, 56, 89, 58],
+  [`Charlie`, 45, 56, 67],
+];
+
+console.log(
+  `The grades of ${grades[0][0]} are ${grades[0][1]} , ${grades[0][2]} , ${grades[0][3]}`,
+); //The grades of Alice are 45 , 67 , 78
+console.log(
+  `The grades of ${grades[1][0]} are ${grades[1][1]} , ${grades[1][2]} , ${grades[1][3]}`,
+); //The grades of Bob are 45 , 67 , 78
+console.log(
+  `The grades of ${grades[2][0]} are ${grades[2][1]} , ${grades[2][2]} , ${grades[2][3]}`,
+); //The grades of harlie are 45 , 67 , 78
+
+// Example 4:
+let data = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+console.log(data[0][0]); // Output : 1
+console.log(data[0][1]); // Output :2
+console.log(data[0][2]); // Output :3
+console.log(data[1][1]); // Output :5
