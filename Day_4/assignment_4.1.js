@@ -1,4 +1,4 @@
-// //  Assignment 4.1 of Advanced Array Methods
+// //  Assignment 4.1 of Advanced Array Methods (pending)
 // // Array slice() Methode
 
 // // Example 1:
