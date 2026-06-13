@@ -102,3 +102,70 @@
 // console.log(`Added ${num} , the sum is ${sum}`);
 // }
 // console.log(`The final sum is ${sum}`);
+
+// // Example 3:
+// let password = "";
+// let attempts = 0;
+// while (password !== "secret123" && attempts < 3) {
+//   password = prompt("Enter password:");
+//   attempts++;
+//   if (password === "secret123") {
+//     console.log("Access granted!");
+//   } else if (attempts < 3) {
+//     console.log(`Wrong password. ${3 - attempts} attempts remaining.`);
+//   } else {
+//     console.log("Access denied. Too many attempts.");
+//   }
+// }
+
+// // Example 4:
+// let number = 500;
+
+// while (number > 1) {
+//   number = number / 2;
+//   console.log(number);
+// }
+
+// // Example 5: finding first power of 2 Greater than Value
+
+// let target = 500;
+// let power = 1;
+// let exponent = 0;
+// while (power < 500) {
+//   exponent++;
+//   power = 2 ** exponent;
+//   console.log(power);
+// }
+
+// Do While Loop
+
+// Example 1: Menu System
+
+// let choice = ``;
+
+// do {
+//   console.log(`Menu`);
+//   console.log(`1.Play`);
+//   console.log(`2.Settings`);
+//   console.log(`3.Exit`);
+
+//   choice = prompt(`Enter your choice`);
+//   if (choice === `1`) {
+//     console.log(`Starting Game`);
+//   } else if (choice === `2`) {
+//     console.log(`Openning Settigs`);
+//   }
+// } while (choice !== `3`);
+
+// console.log(`Goodbye!!!`);
+
+// Example 2:
+let roll;
+let attempts = 0;
+
+do {
+  roll = Math.floor(Math.random() * 6) + 1; // random 1-6
+
+  attempts++;
+  console.log(`Roll ${attempts} : ${roll}`);
+} while (roll !== 6);
