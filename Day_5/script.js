@@ -159,13 +159,242 @@
 
 // console.log(`Goodbye!!!`);
 
-// Example 2:
-let roll;
-let attempts = 0;
+// // Example 2:
+// let roll;
+// let attempts = 0;
 
-do {
-  roll = Math.floor(Math.random() * 6) + 1; // random 1-6
+// do {
+//   roll = Math.floor(Math.random() * 6) + 1; // random 1-6
 
-  attempts++;
-  console.log(`Roll ${attempts} : ${roll}`);
-} while (roll !== 6);
+//   attempts++;
+//   console.log(`Roll ${attempts} : ${roll}`);
+// } while (roll !== 6);
+
+
+// // Example 3: Input Validation - Number Must be Positive & not Undefined
+
+// let number;
+
+// do{
+// number = prompt(`Enter a Valid Number`);
+// number = Number(number);
+// if((number <= 0) || (isNaN(number))){
+//   console.log(`Not a valid Number!!`);
+// }else {
+// console.log(`You have entered the valid number!!!`);
+// }
+// }while((number <=0) || (isNaN(number)));
+
+
+// // Example 4: Countdown with At Least One Execution
+
+// let count = 0;
+// do{
+//   console.log(`The Count is ${count}`);
+//   count++;
+// }while(count < 0);
+
+
+// // Exapmle 5: ATM Withdrawal
+// let balance = 1000;
+// let continueTransaction ;
+// do{
+//   let amount = Number(prompt(`Balance : ${balance} , Enter your withdrawal amount`));
+
+//   if((amount > 0 ) && (amount <= balance)){
+//    balance -= amount;
+//     console.log(`Your Balance is ${balance}`);
+//   }else{
+//    console.log(`Invalid Transaction`);
+
+//     continueTransaction = prompt(`Do you want to continue (Yes/No)`);
+//   }
+// }while(continueTransaction === `Yes`);
+
+
+// // Loop Control : break and continue
+
+// // Example 1: Find First Number Divisible by 7
+// for(let i =1 ; i <= 100; i++){
+//   if(i % 7 === 0 ){
+//     console.log(`First number is divisible by 7`);
+//     break;
+//   }
+// }
+
+
+// // Example 2: Search in Array
+// let fruits = ["apple", "banana", "orange", "grape", "mango"];
+// let searchFor = "orange";
+// for (let i = 0; i < fruits.length; i++) {
+// if (fruits[i] === searchFor) {
+// console.log(`Found ${searchFor} at index ${i}`);
+// found = true;
+// break; // No need to continue searching
+// }
+// }
+
+
+// // Example 3: Password Attempts Limits
+// let correcrPassword = `sec123`;
+// let maxAttempts = 3;
+
+// for(let i =1; i<= maxAttempts; i++){
+//   let password = prompt(`Enter your password`);
+//   if((password === correcrPassword) ){
+//     console.log(`Acces Granted!!`);
+//     break;
+//   }else if(i === maxAttempts){
+//     console.log(`Access denied, No more Attempts`)
+//   }else{
+//     console.log(`Access denied!!`);
+//   }
+// }
+
+
+
+// // Continue Statement
+
+// // Example 1: Print Numbers, Skip 3
+//  for (let i = 0; i <= 5; i++) {
+// if (i === 3) {
+// continue; // Skip when i is 3
+// }
+// console.log(i);
+// }// Output: 0, 1, 2, 4, 5 (3 is skipped)
+
+
+// // Example 2: Print Only Even Numbers Using continue
+// for (let i = 1; i <= 10; i++) {
+// if (i % 2 !== 0) {
+// continue; // Skip odd numbers
+// }
+// console.log(i);
+// }// Output: 2, 4, 6, 8, 10
+
+
+
+// //Iterating Over Arrays
+
+// // Example 1: Print All Array Elements
+
+// let cities = ["London", "Paris", "Tokyo", "New York", "Sydney"];
+// for (let i = 0; i < cities.length; i++) {
+// console.log(`${i}: ${cities[i]}`);
+// }// Output: 0: London 1: Paris 2: Tokyo 3: New York 4: Sydney
+
+// // Ecxample 2: Find sum Value
+// let numbers = [23 ,45 ,56, 78];
+// let sum = 0;
+
+// for( let i = 0 ; i < numbers.length ; i++){
+//  sum += numbers[i];
+// }
+// console.log(`The sum of numbers is ${sum}`);// Output: The sum of numbers is 202
+
+// // Example 3: Find the maximum sum 
+
+// let numbers = [23,67,12,89,45,91,34];
+// let maxnumber = numbers[0];
+// let sum = 0;
+// for(let i = 0; i < numbers.length ; i++){
+//   if(maxnumber < numbers[i]){
+//     maxnumber = numbers[i];
+//     sum += maxnumber;
+//   }
+// }
+// console.log(`The maximum sum is ${sum}`); //The maximum sum is 247
+
+
+// // Example 4: Find Maximum Value
+// let numbers = [23,67,12,89,45,91,34];
+// let maxnumber = numbers[0];
+// let sum = 0;
+// for(let i = 0; i < numbers.length ; i++){
+//   if(maxnumber < numbers[i]){
+//     maxnumber = numbers[i];
+    
+//   }
+// }console.log(`The maximum value is ${maxnumber}`);
+
+
+// // Example 4: Reverse Print an Array
+
+// let colors = [`red`,`green`,`blue`, `yellow`];
+// console.log(`Orignal order`);
+// for(let i = 0 ; i < colors.length; i++){
+//   console.log(colors[i]);
+// }
+
+// console.log("\nReverse order:");
+// for (let i = colors.length - 1; i >= 0; i--) {
+// console.log(colors[i]);
+// }
+
+// // Example 5: Filter Array(Create new array with conditions)
+
+// let ages = [12,25,17,30,15,40,19];
+// let adults = [];
+
+// for(let i = 0 ; i <ages.length ; i++){
+//   if(ages[i] >= 18){
+//     adults.push(ages[i]);
+//   }
+// }
+// console.log(adults);//(4) [25, 30, 40, 19]
+
+
+
+
+// //Nested Arrays (2D Array)
+
+// // Example 1: Iterate Through 2D Array
+// let teams = [
+//   [`Alice`,`Bob`],
+//   [`Charlie`,`David`],
+//   [`Eve`, `Frank`],
+//   [`jhon` , `devil`],
+//   [`thomas`],
+//   [`janes`]
+// ]
+
+// for(let i = 0; i < teams.length ; i++){
+//   console.log(`Team ${i +1}`);
+//   for(let j = 0; j < teams[i].length ; j++){
+//     console.log(`- ${teams[i][j]}  `);
+//   }
+// }// Output : 
+
+
+// // Example 2:2D Array - Student Grades
+// let grades = [
+// [85,90,78],
+// [92,88,95],
+// [76,82,80]
+// ];
+
+// for(let student = 0; student < grades.length ; student++){
+// let sum = 0;
+//   for(let grade = 0; grade < grades[student].length ; grade++){
+//  sum += grades[student][grade];
+//   }
+
+//   let average = sum / grades[student].length; 
+//   console.log(`The average marks scored by student ${student +1} is ${average}`)
+// }
+
+
+
+// Example 3: Matrix Addition
+let matrix1 = [[1,2],[3,4]]
+let matrix2 = [[5,6],[7,8]]
+
+let result = [];
+for(let i = 0; i< matrix1.length; i++){
+  result[i] =[]; 
+  for(let j = 0; j <matrix2[i].length; j++){
+     result[i][j] = matrix1[i][j] + matrix2[i][j];
+     console.log(result[i][j]);
+  }
+}
+console.log(result);// Output: 6,8,10,12
