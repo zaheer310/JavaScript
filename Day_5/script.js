@@ -385,16 +385,138 @@
 
 
 
-// Example 3: Matrix Addition
-let matrix1 = [[1,2],[3,4]]
-let matrix2 = [[5,6],[7,8]]
+// // Example 3: Matrix Addition
+// let matrix1 = [[1,2],[3,4]]
+// let matrix2 = [[5,6],[7,8]]
 
-let result = [];
-for(let i = 0; i< matrix1.length; i++){
-  result[i] =[]; 
-  for(let j = 0; j <matrix2[i].length; j++){
-     result[i][j] = matrix1[i][j] + matrix2[i][j];
-     console.log(result[i][j]);
-  }
+// let result = [];
+// for(let i = 0; i< matrix1.length; i++){
+//   result[i] =[]; 
+//   for(let j = 0; j <matrix2[i].length; j++){
+//      result[i][j] = matrix1[i][j] + matrix2[i][j];
+//      console.log(result[i][j]);
+//   }
+// }
+// console.log(result);// Output: 6,8,10,12
+
+
+
+// // The for ...of loop
+
+// // Example 1: iterate through array
+// let colors = [`Red` , `Blue` , `green`];
+// for( let color  of colors){
+//   console.log(color);
+// }
+
+// // Example 2 : Sum Array Elements
+// let prices = [19,99,29,99,49,99,9,99];
+// let total = 0;
+//  for(let price of prices){
+//   total += price;
+//  }
+//  console.log(total);// Output : 502
+
+// //  Example 3:
+// let word = `JavaScript`;
+
+// for(let letter of word){
+//   console.log(letter);
+// }// Output : J a v a S c r i p t 
+
+
+// // Example 4: Count Vowels in String
+
+// let sentence = `JavaScript`;
+// let vowels = `aeiouAEIOU`
+// let count = 0;
+// for(let word of sentence){
+
+//   if(vowels.includes(word)){
+//     count ++;
+//   }
+// }
+// console.log(count);// Output : 3
+
+
+
+// // Nested for ....of with 2D array
+
+// // Example 1: 
+// let departments = [
+//   [`Alice` ,`Bob` , `Charlie`],
+//   [`David` , `Eve`],
+//   [`Frank` , `Grace` ,`Henry` , `Ivy`]
+// ];
+
+// for(let department of departments){
+//   for(let employee of department){
+//     console.log(employee);
+//   }
+// }
+
+
+// // Chalenges
+
+// // Chalenge 1: 
+// let favotiteMovie = `Inception`;
+// let guess = prompt(`Enter your favorite movie`);
+
+// while((guess !== favotiteMovie) && (guess !== `quit`)){
+//   guess = prompt(`Enter your favorite movie`);
+// if(guess === favotiteMovie){
+//   console.log(`Same Pinch`);
+// }else if(guess == `quit`){
+//   console.log(`Poor Boy`);
+// }else{
+//   console.log(`Wron!, Try again`);
+// }
+
+// }
+
+
+// //  Chalenge 2: Number Guessing Game with Hints
+// let secretNumber = Math.floor(Math.random() * 100) + 1; // Random 1-100
+// let guess = 0;
+// let attempts = 0;
+// while (guess !== secretNumber) {
+// guess = Number(prompt("Guess a number between 1 and 100:"));
+// attempts++;
+// if (guess === secretNumber) {
+// console.log(`🎉 Correct! You guessed it in ${attempts} attempts!`);
+// } else if (guess < secretNumber) {
+// console.log(" Too low! Try higher.");
+// } else {
+// console.log("Too high! Try lower.");
+// }
+// }
+
+
+// Challenge : Rock Paper & Scissors
+let playerWins = 0;
+let compuetrWins = 0;
+let choice = [`rock` , `paper` , `scissors`]
+
+while( (playerWins < 2) && (compuetrWins < 2)){
+  let playerChoice = prompt(`Enter your choice`).toLowerCase();
+  let computerChoice = choice[Math.floor(Math.random()*3)];
+  console.log(`your choice is ${playerChoice} , computer choice is ${computerChoice}`)
+
+  if(playerChoice === computerChoice){
+    console.log(`It's Draw`)
+  }else if(
+    (playerChoice === `rock` && computerChoice === `scissors`)||
+    (playerChoice === `scissors` && computerChoice === `paper`)||
+    (playerChoice === `paper` && computerChoice === `rock`)
+    ){
+      playerWins++;
+    }else{
+      compuetrWins++;
+    }
 }
-console.log(result);// Output: 6,8,10,12
+
+if(playerWins >  compuetrWins){
+  console.log(`You won!!`)
+}else{
+  console.log(`you lost!!`)
+}
