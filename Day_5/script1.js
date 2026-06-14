@@ -144,21 +144,28 @@
 
 
 
-// Example 2: Shopping Lists
+// // Example 2: Shopping Lists
 
-let shoppingList = [
-    [`Milk`, `Bread`,`Eggs`],
-    [`Apple`, `Banana` ],
-    [`Chicken` , `Rice` , `Beans` ,`Salad`],
-    [`brinjal`],
-]
+// let shoppingList = [
+//     [`Milk`, `Bread`,`Eggs`],
+//     [`Apple`, `Banana` ],
+//     [`Chicken` , `Rice` , `Beans` ,`Salad`],
+//     [`brinjal`],
+// ]
 
-let listNumber = 0;
+// let listNumber = 0;
 
-for(let lists of shoppingList){
-    listNumber++;
-    console.log(`List Number ${listNumber}`);
-    for(let items of lists){
-        console.log(items);
-    }
-}
+// for(let lists of shoppingList){
+//     listNumber++;
+//     console.log(`List Number ${listNumber}`);
+//     for(let items of lists){
+//         console.log(items);
+//     }
+// }
+
+
+
+// Exercise 3,4,5 are pending!!!!
+
+// Pending topic is Comparison: for vs for...of with Nested Arrays
+// pending practicle examples 1,2,3,4,5 & Quick Reference
