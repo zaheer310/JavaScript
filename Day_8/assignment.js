@@ -47,3 +47,5 @@ const student = {
 
 let studentMArks = student.calculateAverage();
 console.log(studentMArks);
+
+pending assignment
