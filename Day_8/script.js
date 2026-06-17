@@ -14,9 +14,7 @@
 
 // console.log(student.getAvg());
 
-
-
-// // Exceptional Handling : Try & Catch 
+// // Exceptional Handling : Try & Catch
 
 // console.log(`Start of program!`)
 
@@ -28,19 +26,15 @@
 // // You can even print the error
 // }
 
-
 // Arrow Function
-
-
 
 // // Explicit returns
 //  const sumOfNumbers = (a,b) => {
-//  return a+b;    
+//  return a+b;
 // }
 
 // // Implicit returns
 // const sumOfNumber = (a,b) => a + b;
-
 
 // // setTimeout - Execute Once
 // // Syntax: setTimeout(callback , timeInMs);
@@ -58,14 +52,12 @@
 
 // console.log(`Welcome`);
 
-
 // // setInterval -Execute Repeatedly
 // // Syntax : setInterval( callback , timeInMs);
 
 // let id = setInterval( ()=>{
 //     console.log(`I will repeat every two secodes`)
 // },2000)
-
 
 // // The this Keyword
 
@@ -82,9 +74,6 @@
 
 // console.log(`${student.name}'s Average Marks are  ${student.avgMarks()}.`)
 
-
-
-
 // // Example 2: Bank Account
 
 // const account ={
@@ -92,12 +81,11 @@
 //     balance: 5000,
 //     deposite(amount){
 //         this.balance += amount;
-//         return(`${this.name} deposited ${amount}, the balance is ${this.balance} `) 
+//         return(`${this.name} deposited ${amount}, the balance is ${this.balance} `)
 //     }
 // }
 
 // console.log(account.deposite(500));
-
 
 // // Example 3: Shopping Cart
 
@@ -114,9 +102,6 @@
 // let cartStatus = cart.addItem(`Banana`);
 // console.log(cartStatus)
 
-
-
-
 // // Exceptional Handling Try & Catch
 // // Example 1: Handling Missing Variables
 
@@ -127,8 +112,6 @@
 // console.log("Caught an error: Variable not found");
 // }
 // console.log("Program continues"); // This runs!
-
-
 
 // // Example 2: Division Error
 
@@ -168,12 +151,10 @@
 // console.log(validAge(160));
 // console.log(validAge(60));
 
-
 // // Arrow Function
 
 // // this Example is of explicit return
 // // Example 1: basic arrow function
-
 
 // const greet = (name) =>{
 //     return (`Hello ${name}`)
@@ -203,13 +184,112 @@
 // };
 // console.log(calculateTotal(100, 0.1)); // 110
 
+// // Example 4:Array Methods with Arrow Functions
+// let number = [1, 2, 3, 4, 5];
+// let doubled = number.map((num) => num * 2);
+// console.log(doubled);
 
-// Example 4:Array Methods with Arrow Functions
-let number = [1,2,3,4,5]
-let doubled = number.map(num => num*2)
-console.log(doubled)
+// let evenNumber = number.filter((num) => num % 2 === 0);
+// console.log(evenNumber);
 
-let evenNumber = number.filter(num => num % 2 === 0);
-console.log(evenNumber)
+// // Timing Evets: setTimeout & setInterval
 
-continue from pg 6
+// // Syntax: setTimeout(callback, timeInMs)
+
+// // Example 1: simple Delay
+// console.log(`Starting...!`);
+// setTimeout(() => {
+//   console.log(`This happens after 3seconds`);
+// }, 3000);
+
+// console.log(`Continuing..`);
+
+// // Example 2: Delayed Greeting
+
+// function greetUser(name) {
+//   console.log(`Hello`);
+//   setTimeout(() => {
+//     console.log(`Welcome back , ${name}`);
+//   }, 2000);
+
+//   console.log(`Practice in JavaScript!`);
+// }
+// greetUser(`Zaheer`);
+
+// setInterval:- Execute Code Repeatedly
+// Syntax: setInterval(callback , timeInMs)
+
+// // Example 1:Repeating Counter
+// let count = 0;
+
+// const id = setInterval(() => {
+//   count++;
+//   console.log(`Count ${count}`);
+
+//   if (count === 5) {
+//     clearInterval(id);
+//     console.log(`Counter Stopped !!!`);
+//   }
+// }, 1000);
+
+// // Example 2: Clock Display
+
+// let seconds = 0;
+
+// const id = setInterval(() => {
+//   seconds++;
+//   console.log(`Elapsed time : ${seconds} seconds`);
+
+//   if (seconds === 80) {
+//     clearInterval(id);
+//     console.log(`Clock stopped`);
+//   }
+// }, 1000);
+
+// // Example 5 : Stopping an Interval
+
+// const interval = setInterval(() => {
+//   console.log(`Repeating Message !!!`);
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(interval);
+//   console.log(`interval stops!!`);
+// }, 10000);
+
+// // this with arrow function
+
+// // Example 1:
+
+// const student = {
+//   name: `Alex`,
+//   JS: 80,
+//   getName() {
+//     return this.name;
+//   },
+// //   studentName: () => {
+// //     return this.name;//This  doesn't work
+// //   },
+// };
+
+// const boyName = student.studentName();
+// console.log(boyName);
+
+
+
+// Example 2:
+const counter = {
+  count: 0,
+  start() {
+    const id = setInterval(() => {
+      this.count++;
+      console.log(this.count);
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(id);
+    }, 10000);
+  },
+};
+
+counter.start();
