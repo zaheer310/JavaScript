@@ -199,12 +199,101 @@
 // console.log(accumulator); // Output :-15
 
 
-// Example 2:- Find Maximum Value 
-let values = [ 45,78,12,89,34]
+// // Example 2:- Find Maximum Value 
+// let values = [ 45,78,12,89,34]
 
-let total = 0;
+// let total = 0;
 
-let accumulator = values.reduce((total, num) => {
-    return num = num > total? num : total;
-})
-// console.log(accumulator); // Output:- 258
+// let accumulator = values.reduce((total, num) => {
+//     return num = num > total? num : total;
+// })
+//  console.log(accumulator); // Output:- 258
+
+
+
+// // Example 3: Count Occurences
+
+// let fruits = [`Apple` , `Banana` ,`Mango` , `Apple` , `Apple` , `Mango` , `Banana`];
+
+// let counter = fruits.reduce((count,fruit) =>{
+//  count[fruit] = (count[fruit] || 0) + 1;
+
+//  return count; 
+// } ,{})
+//  console.log(counter)
+
+
+// // Example 4: Calculate total price 
+// let cart = [
+//     {item:`Shirt` , price:500},
+//     {item:`Shoes` , price:1200},
+//     {item:`Hat` , price:300},
+// ];
+// let amount =0;
+// let total = cart.reduce((amount ,row) => amount + row.price, 0);
+// console.log(total);// Output: 2000
+
+
+
+// // Example 5:- Flattens nested arrays
+// let nested = [[1,2],[3,4]];
+// let accum = [];
+// let flatten = nested.reduce((accum , innerArray) => {
+//     accum.push(...innerArray)
+//     return accum
+//  },[]);
+// console.log(flatten);// Output : (4) [1, 2, 3, 4]
+
+
+// // Alternative
+// let nested1 = [[1,2] ,[3,4]];
+// let flat = nested1.reduce((acc, arr) => acc.concat(arr),[]);
+// console.log(flat);// Output : (4) [1, 2, 3, 4]
+
+
+
+// // Default parameter
+// // function functionName(param1 = defaultValue1, param2 = defaultValue2) {
+// // function body
+// // }
+
+
+
+// // Example 1: Simple greeting
+// function greet(name =`User`) {
+//  console.log(`Hello ${name}`);
+// }
+
+// console.log(greet(`Shaker`));//Output : Hello Shaker
+// console.log(greet());// Output : Hello User
+
+
+
+// // Example 2: Calculate with default rate
+
+// function calculateTax(amount, tax = 1.18){
+//     return amount*tax;
+// }
+// console.log(calculateTax(1000));// Output:1180
+// console.log(calculateTax(1500,0.10)); //Output: 150
+
+
+
+// Example 3:Create User Profile
+function createProfile(name = `Anas` , age = 19 , country = `HYD`){
+    return {name , age , country};
+}
+console.log(createProfile(`Shaker` , 22 , `HYD`)); // Output: {name: 'Shaker', age: 22, country: 'HYD'}
+console.log(createProfile(`Zaheer` , 22 , `HYD`)); //Output :{name: 'Zaheer', age: 22, country: 'HYD'}
+console.log(createProfile(`Sahil` , 21 , `HYD`));// Output:{name: 'Sahil', age: 21, country: 'HYD'} 
+console.log(createProfile());// Output: {name: 'Anas', age: 19, country: 'HYD'}
+
+
+// Example 4: Power Function
+
+function power(number , exponentialValue = 2){
+    return number **exponentialValue;
+}
+
+console.log(power(2, 5)) // Output: 32
+console.log(power(3))// Output: 9
