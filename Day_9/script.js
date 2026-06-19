@@ -207,4 +207,4 @@ let total = 0;
 let accumulator = values.reduce((total, num) => {
     return num = num > total? num : total;
 })
-console.log(accumulator); // Output:- 258
+// console.log(accumulator); // Output:- 258
