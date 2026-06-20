@@ -279,21 +279,112 @@
 
 
 
-// Example 3:Create User Profile
-function createProfile(name = `Anas` , age = 19 , country = `HYD`){
-    return {name , age , country};
+// // Example 3:Create User Profile
+// function createProfile(name = `Anas` , age = 19 , country = `HYD`){
+//     return {name , age , country};
+// }
+// console.log(createProfile(`Shaker` , 22 , `HYD`)); // Output: {name: 'Shaker', age: 22, country: 'HYD'}
+// console.log(createProfile(`Zaheer` , 22 , `HYD`)); //Output :{name: 'Zaheer', age: 22, country: 'HYD'}
+// console.log(createProfile(`Sahil` , 21 , `HYD`));// Output:{name: 'Sahil', age: 21, country: 'HYD'} 
+// console.log(createProfile());// Output: {name: 'Anas', age: 19, country: 'HYD'}
+
+
+// // Example 4: Power Function
+
+// function power(number , exponentialValue = 2){
+//     return number **exponentialValue;
+// }
+
+// console.log(power(2, 5)) // Output: 32
+// console.log(power(3))// Output: 9
+
+
+
+// // Example 5: Array Operatins 
+// function getSlice(arr, start =0, end = arr.length){
+//     return arr.slice(start , end);
+// }
+
+// let slicedArr = getSlice([1,2,3,4,5] , 0, 3); 
+// console.log(slicedArr); // Output: (3) [1, 2, 3] 
+
+
+
+
+// // The spread Operator
+// // Example 1: Copy an Array
+// let orignal = [1,2,3,4];
+
+// let newArr = [...orignal];
+// newArr.push(10,12);
+// console.log(newArr); //Output: (6) [1, 2, 3, 4, 10, 12]
+
+// console.log(orignal); //Unchanged array
+
+
+// // Example 2: Merged Array
+
+// let fruits = [ `Apple` , `Banana`];
+// let vegetables = [`Brinjal` , `Tomato`, `Potato`];
+
+// let food = [...fruits ,...vegetables]
+// console.log(food)//Output :(5) ['Apple', 'Banana', 'Brinjal', 'Tomato', 'Potato']
+
+
+
+// //Example 3: Copy andupdate object
+
+// let numbers = [2,3,4];
+// let moreNumbers = [ 1,...numbers,5,6];
+// console.log(moreNumbers); //Output:  (6) [1, 2, 3, 4, 5, 6]
+
+
+// // Example 4: Copy and update object
+
+// let user = {
+//     name : `Zaheer Shaker Sahil Anas`,
+//     email: `mohad@gamil.com`,
+//     }
+
+// let updatedUser ={
+//     ...user,
+//     age :19,
+//     city : `HYD`
+// }
+
+// console.log(updatedUser); //Output : {name: 'Zaheer Shaker Sahil Anas', email: 'mohad@gamil.com', age: 19, city: 'HYD'}
+
+
+// // Example 5: Convert String to Array
+// let name = `HELLO`;
+
+// let words = [...name];
+// console.log(words) //Output : (5) ['H', 'E', 'L', 'L', 'O']
+
+
+
+
+// //The Rest Operator
+
+// // Syntax : function functionName(...rearParams){
+// // restParams is an array
+// // }
+
+
+// // Example 1: Sum any number of arguments
+
+// function sum(...numbers){
+//     return numbers.reduce((total,num) => total += num)
+// }
+// console.log(sum(1,2,3,4,5)) //Output :15
+// console.log(sum(3,4,5,6))//Output : 18
+
+
+// Example 2:First and Rest
+function announce(first , ...others){
+    console.log(`The Winner is ${first}`);
+    console.log(`Others are ${others.join(",")}`)
 }
-console.log(createProfile(`Shaker` , 22 , `HYD`)); // Output: {name: 'Shaker', age: 22, country: 'HYD'}
-console.log(createProfile(`Zaheer` , 22 , `HYD`)); //Output :{name: 'Zaheer', age: 22, country: 'HYD'}
-console.log(createProfile(`Sahil` , 21 , `HYD`));// Output:{name: 'Sahil', age: 21, country: 'HYD'} 
-console.log(createProfile());// Output: {name: 'Anas', age: 19, country: 'HYD'}
 
+announce(`Alex` ,`David` ,`Harry` ,`May`);
 
-// Example 4: Power Function
-
-function power(number , exponentialValue = 2){
-    return number **exponentialValue;
-}
-
-console.log(power(2, 5)) // Output: 32
-console.log(power(3))// Output: 9
