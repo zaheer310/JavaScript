@@ -380,11 +380,175 @@
 // console.log(sum(3,4,5,6))//Output : 18
 
 
-// Example 2:First and Rest
-function announce(first , ...others){
-    console.log(`The Winner is ${first}`);
-    console.log(`Others are ${others.join(",")}`)
+// // Example 2:First and Rest
+// function announce(first , ...others){
+//     console.log(`The Winner is ${first}`); //Output :The Winner is Alex
+//     console.log(`Others are ${others.join(",")}`) //Output :Others are David,Harry,May
+// }
+
+// announce(`Alex` ,`David` ,`Harry` ,`May`);
+
+
+
+
+// // Example 3: Combine with regular parameters
+// function createTeam (captain , viceCaptain , ...players){
+//     return {
+//         captain,
+//         viceCaptain,
+//         players
+//     }
+// }
+
+// let team = createTeam(`Virat` ,`Rohit`,`Dhoni`,`Hardik`,`Bumrah`);
+// console.log(team);
+
+
+
+// // Example 4: Find Maximum
+
+// function maxNum (...num){
+//  return Math.max(...num)
+// }
+
+// let maxElem = maxNum(2,3,4,5,6,78); 
+// console.log(maxElem)// Output: 78
+
+
+
+// // Example 5: Multiply All Numbers
+// function multiply(multiplier , ...numbers){
+//     return numbers.map((num) =>num*multiplier)
+// }
+
+// let multipliedArr = multiply(2,1,2,3,4,5);
+// console.log(multipliedArr);// Output: (5) [2, 4, 6, 8, 10]
+
+// multipliedArr = multiply(10,2,3,4,5);
+// console.log(multipliedArr)//Output: (4) [20, 30, 40, 50] 
+
+
+
+// // SPREAD - Expands
+// let arr = [1, 2, 3];
+// console.log(...arr); // 1 2 3 (separate values)
+// // REST - Collects
+// function collect(...items) {
+// console.log(items); // [1, 2, 3] (array)
+// console.log(typeof(items));
+// }
+// collect(1, 2, 3);
+
+
+
+// // Array Destructor
+// // Syntax: let [variable1, variable2,....] = arrayName
+
+
+// // Example 1: Basic destructuring
+// let colors = [`Red` ,`Blue`,`Green`]
+
+// let [first , second ,third] = colors
+
+// console.log(first); //Output: Red
+// console.log(second); //Output: Blue
+// console.log(third); //Output: Green
+
+
+// // Example 2: Skip elements
+// let numbers = [1,2,3,4,5];
+
+// let [first ,,third,,fifth] = numbers
+// console.log(first) // 1
+// console.log(third)//3
+// console.log(fifth)//5
+
+
+// // Example 3: Swap variables
+// let a = 10;
+// let b = 20;
+//  [a,b] = [b,a];
+//  console.log([a,b]);
+
+// // Example 4: with degault values
+// let [a =5 , b =10] = [1];
+// console.log(a) //Output: 1
+// console.log(b)//10 (default, because array has only one element)
+
+
+// // Example 5: Get first and rest
+// let scores = [95,87,92,78,85]
+
+// let [highest , ...remaining] = scores
+
+// console.log(highest); //Output: 95
+// console.log(remaining); // Output:(4) [87, 92, 78, 85]
+
+
+// Object Destructuring
+// Syntax: let { property1, property2 } = object;
+// Syntax for Renaiming : let { property: newName } = object; // Renaming
+
+
+// // Example 1:Basic object destructuring
+// let students = {
+//     name: `Zaheer`,
+//     age : 22,
+//     rollNo : 122
+// }
+
+// let {name , age , rollNo} = students
+
+// console.log(name) //Zaheer
+// console.log(age)// 22
+// console.log(rollNo)//122
+
+
+// // Example 2:Renaiming Variables
+// let user = {
+//     username : `Karan123`,
+//     email : `karan@123gmail.com`
+// }
+
+// let { username : id , email : mail} = user;
+
+// console.log(id);// Output : Karan123
+// console.log(mail); // Output : karan@123gmail.com
+
+
+// // Example 3: With default values
+
+// let settings = {
+//     theme : `dark`,
+// }
+// let {theme , language = `English`} = settings
+
+// console.log(theme);// dark
+// console.log(language);//English (default)
+
+
+// // Example 4 : Nested Destruction
+// let person = {
+//     name : `Jhon`,
+//     address :  {
+//     city : `NewYork`,
+//     country : `USA`,
+//     pin : 400404,
+//     }
+// }
+
+// let {name , address :{city, country}} = person;
+// console.log(name); // Output: Jhon
+// console.log(city); // Output: NewYork
+// console.log(country) ; // Output : USA
+
+
+// Example 5: Function Parameters
+function displayUser ({name,age,country = `India`}){
+    console.log(`${name} is ${age} years old from ${country}` )
 }
 
-announce(`Alex` ,`David` ,`Harry` ,`May`);
+displayUser(name = `Neha` , 22, `USA`);
+
+displayUser(name =`Priya` , 22, `Germany`)
 
