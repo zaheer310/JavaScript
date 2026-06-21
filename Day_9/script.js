@@ -544,11 +544,11 @@
 
 
 // Example 5: Function Parameters
-function displayUser ({name,age,country = `India`}){
-    console.log(`${name} is ${age} years old from ${country}` )
+function displayUser({ name, age, country = "India" }) {
+    console.log(`${name} is ${age} years old from ${country}`);
 }
 
-displayUser(name = `Neha` , 22, `USA`);
+displayUser({ name: "Neha", age: 22, country: "USA" });
 
-displayUser(name =`Priya` , 22, `Germany`)
+displayUser({ name: "Priya", age: 22, country: "Germany" });
 
